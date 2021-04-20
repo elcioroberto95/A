@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+<script>
+//TENTANDO IMPLEMENTAR UMA 
+//SOLUÇÃO MAIS DINÂMICA AO PROBLEMA ANTERIOR
+var ano = 2021;
+var nomes = ["Flavio","Joao","Medeiros"];
+var idades = [1977,1966,1976];
+
+function calcularIdades(nomes,ano,idades){
+    for(var i = 0;i < nomes.length;i++){
+        document.write(nomes[i]," tem ",(ano - idades[i])," anos" , "<br>");
+    };
+};
+calcularIdades(nomes,ano,idades);
+</script>

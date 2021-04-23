@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<input type="text">
+<button>Enviar</button>
+<script>
+var input = document.querySelector('input');
+var button = document.querySelector('button');
+
+function sorteia(){
+    return Math.round(Math.random() * 10);
+};
+function sorteiaNumeros(quantidade){
+    var segredos = [];
+    var numero = 1;
+        while(numero < quantidade){
+             var numeroSorteado = sorteia();
+                if(numeroSorteado != 0){
+                    var achou = false;
+                        for(var i = 0;i < segredos.length;i++){
+                            if(segredos[i] == numeroSorteado){
+                                achou = true;
+                                break;
+                            };
+                        };
+                        if(achou == false ){
+                            segredos.push(numeroSorteado);
+                        };
+
+                }
+
+        };
+        return segredos;
+}
+function verifica(){
+    var achou = false;
+    for(var i = 0;i < segredos.length;i++){
+        if(input.value ===segredos[i]){
+            alert("VOCE ACERTOU");
+            achou = true;
+            break;
+        }
+    }    
+    if(achou == false){
+        alert("VOCE ERROU");
+    }
+    input.value ="";
+    input.focus();
+};
+var segredos = sorteiaNumeros(5);
+
+
+</script>

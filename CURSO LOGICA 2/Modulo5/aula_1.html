@@ -6,6 +6,8 @@
     pincel.fillStyle = 'lightgray';
     pincel.fillRect(0, 0, 600, 400);
     var raio = 10;
+    var posicaoX;
+    var posicaoY;
 
     function desenhaCirculo(x, y, raio,cor) {
 
@@ -25,16 +27,29 @@
         };
     };
     function sorteiaPosicao(maximo){
-        return Math.floor(Math.random() * maximo);
+        var numero  = Math.floor(Math.random() * maximo) 
+        console.log(numero);
+        return numero ;
     };
+    function dispara(event){
+        var x = event.pageX - tela.offsetLeft;
+        var y = event.pageY - tela.offsetTop;
+    
+    
+        if(x > posicaoX - raio && x < posicaoX + raio && y > posicaoY - raio && y < posicaoY + raio) {
+
+        alert('Acertou!');
+
+    }
+    }
  
     
     function atualizaTela(){
         limpaTela();
-        var posicaoY = sorteiaPosicao(400);
-        var posicaoX = sorteiaPosicao(600);
+       posicaoY = sorteiaPosicao(400);
+       posicaoX = sorteiaPosicao(600);
         desenhaAlvo(posicaoX,posicaoY);
     };
-    setInterval(atualizaTela,1000);
-
+    setInterval(atualizaTela,3000);
+    tela.onclick = dispara;
 </script>

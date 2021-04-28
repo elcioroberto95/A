@@ -1,6 +1,9 @@
 let imagemDaEstrada;
 let imagemDoAtor;
 let imagemCarro;
+let imagemCarro2;
+let imagemCarro3;
+let imagemCarros;
 
 
 function setup() {
@@ -10,10 +13,17 @@ function setup() {
     createCanvas(width, height);
 };
 
+
+
+
+  
+
 function draw() {
     background(imagemDaEstrada); 
     mostraAtor();
     mostraCarro();
     movimentaCarro();
+    voltaPosicaoAnterior();  
     movimentaAtor();
+    
 };

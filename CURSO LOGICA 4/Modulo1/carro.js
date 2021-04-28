@@ -1,15 +1,29 @@
-let xCarro = 420;
-let yCarro = 40;
+//código do carro
+
+let xCarros = [600, 600, 600];
+let yCarros = [40, 96, 150]; 
+let velocidadeCarros = [2, 2.5, 3.2];
 
 function mostraCarro(){
-    image(imagemCarro, xCarro, yCarro, 50, 40)
-};
+    for(let i = 0; i < imagemCarros.length; i = i + 1){
+  image(imagemCarros[i], xCarros[i], yCarros[i], 50, 40);
+  }
+}
 
 function movimentaCarro(){
-    
-        xCarro = xCarro - 2;
-        if(xCarro < -10){
-            xCarro = 620;
-            xCarro += 2;
+    for(let i = 0; i < imagemCarros.length; i = i + 1){
+        xCarros[i] -= velocidadeCarros[i];
         }
+}
+
+function voltaPosicaoAnterior(){
+    for(let i = 0; i < imagemCarros.length; i = i + 1){
+        if(passouTodaATela(xCarros[i])){
+                xCarros[i] = 600;
+        }
+    }
+}
+
+function passouTodaATela(xCarro){
+    return xCarro < - 50;
 }

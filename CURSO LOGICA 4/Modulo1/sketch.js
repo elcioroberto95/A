@@ -25,5 +25,5 @@ function draw() {
     movimentaCarro();
     voltaPosicaoAnterior();  
     movimentaAtor();
-    
+    verificaColisao();
 };
